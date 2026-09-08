@@ -3,26 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vincent's personal website</title>
+    <title>Vincent Yen | Home</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Hi, I'm Vincent</h1>
-      <p>Welcome to my personal website. This was built for CSCE 331</p>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">Vincent Yen</a>
+        <nav aria-label="Primary navigation">
+          <a class="active" aria-current="page" href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="qualifications.html">Qualifications</a>
+          <a href="extracurricular.html">Extracurriculars</a>
+          <a href="ai-generated.html">AI Generated</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer science student &amp; builder</p>
+          <h1>Hi, I'm Vincent.</h1>
+          <p>
+            Welcome to my personal website. I am a junior at Texas A&amp;M
+            University studying computer science.
+          </p>
+          <a class="button" href="portfolio.html">View my work</a>
+        </div>
+
+        <div class="image-placeholder" role="img" aria-label="Placeholder for a profile image">
+          <span>Add profile image</span>
+        </div>
+      </section>
+
+      <section class="content-card">
         <h2>About Me</h2>
         <p>
-          I am a junior at Texas A&M university studying computer science. I like to build things that have the ability to change the world. Some of my hobbies include sports, videographer, and music.
+          I like to build things that have the ability to change the world. Some
+          of my hobbies include sports, videography, and music.
         </p>
       </section>
 
-      
-
-      <section>
+      <section class="content-card">
         <h2>Contact</h2>
         <p>Email: vincentyen@tamu.edu</p>
       </section>

@@ -4,26 +4,163 @@
 
 body {
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,;
+  font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.6;
   background-color: #f5f7fb;
   color: #222;
 }
 
-header {
+a {
+  color: inherit;
+}
+
+.site-header {
   background-color: #800000;
   color: #fff;
+  padding: 1rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+nav a {
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a.active {
+  background-color: #fff;
+  color: #800000;
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.hero {
+  min-height: 460px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem 0 4rem;
+}
+
+.hero-copy {
+  max-width: 500px;
+}
+
+.eyebrow {
+  margin-bottom: 0.5rem;
+  color: #800000;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+}
+
+h2,
+h3 {
+  color: #800000;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.hero-copy p:not(.eyebrow) {
+  max-width: 38rem;
+  font-size: 1.1rem;
+}
+
+.image-placeholder,
+.media-placeholder {
+  min-height: 330px;
+  border: 2px dashed #b7c0cc;
+  border-radius: 14px;
+  background-color: #e9edf2;
+  color: #657080;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
-main {
-  max-width: 800px;
-  margin: 1.5rem auto;
-  padding: 0 1rem 2rem;
+.image-placeholder span,
+.media-placeholder span {
+  border: 1px solid #9da8b5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
 }
 
-section {
+.button {
+  display: inline-block;
+  border: 1px solid #800000;
+  border-radius: 6px;
+  background-color: #800000;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: #5f0000;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: #800000;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  color: #fff;
+}
+
+.button-small {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.content-card,
+.project-card,
+.activity-card,
+.resume-preview,
+.info-panel {
   background-color: #fff;
   border: 1px solid #dfe4ea;
   border-radius: 8px;
@@ -31,7 +168,125 @@ section {
   margin-bottom: 1rem;
 }
 
-h1,
-h2 {
+.page-heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-heading h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+}
+
+.page-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-grid,
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.project-card,
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.project-card .media-placeholder,
+.activity-card .media-placeholder {
+  min-height: 160px;
+  margin: -1rem -1rem 1rem;
+  border: 0;
+  border-bottom: 1px dashed #b7c0cc;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card h2,
+.activity-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-card .button,
+.activity-card .button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.qualifications-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.resume-preview {
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px dashed #b7c0cc;
+}
+
+.resume-preview h2 {
+  margin-bottom: 0.5rem;
+}
+
+.info-panel h2 {
+  border-bottom: 1px solid #dfe4ea;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-panel ul {
   margin-top: 0;
+  padding-left: 1.2rem;
+}
+
+.info-panel + .info-panel {
+  margin-top: 1rem;
+}
+
+.blank-page {
+  min-height: 55vh;
+}
+
+@media (max-width: 800px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .qualifications-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero {
+    padding-top: 0;
+  }
+
+  .image-placeholder {
+    min-height: 260px;
+  }
+
+  .project-grid,
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-preview {
+    min-height: 420px;
+  }
 }
