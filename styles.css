@@ -347,6 +347,14 @@ h2 {
   margin-top: 1rem;
 }
 
+.videography-links {
+  justify-content: center;
+}
+
+.spotify-links {
+  justify-content: center;
+}
+
 .activity-link {
   display: inline-flex;
   align-items: center;
@@ -455,6 +463,320 @@ h2 {
   min-height: 55vh;
 }
 
+.galaxy-body {
+  background-color: #03040c;
+  color: #fff;
+}
+
+.galaxy-page {
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  min-height: calc(100vh - 82px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #03040c;
+}
+
+.galaxy-background,
+.galaxy-fallback,
+.galaxy-spline,
+.galaxy-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.galaxy-background {
+  z-index: 0;
+  overflow: hidden;
+  background-color: #03040c;
+}
+
+.galaxy-fallback {
+  background:
+    radial-gradient(circle at 52% 42%, rgba(116, 55, 164, 0.32), transparent 24%),
+    radial-gradient(circle at 76% 22%, rgba(27, 102, 170, 0.22), transparent 24%),
+    radial-gradient(circle at 18% 78%, rgba(55, 37, 130, 0.24), transparent 28%),
+    #03040c;
+}
+
+.galaxy-fallback::before,
+.galaxy-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.85;
+  background-image:
+    radial-gradient(circle at 12% 18%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 28% 64%, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 44% 12%, rgba(174, 214, 255, 0.9) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 66% 76%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 84% 54%, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 91% 14%, rgba(166, 202, 255, 0.8) 0 1px, transparent 1.5px);
+  background-size: 230px 190px, 310px 260px, 270px 230px, 360px 300px, 290px 240px, 410px 350px;
+}
+
+.galaxy-fallback::after {
+  opacity: 0.45;
+  transform: rotate(18deg) scale(1.2);
+  background-size: 170px 150px, 250px 210px, 330px 280px, 220px 190px, 380px 320px, 290px 250px;
+}
+
+.galaxy-spline {
+  z-index: 1;
+  border: 0;
+  pointer-events: none;
+}
+
+.galaxy-vignette {
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(3, 4, 12, 0.2), transparent 22%, transparent 68%, rgba(3, 4, 12, 0.82)),
+    linear-gradient(to right, rgba(3, 4, 12, 0.55), transparent 24%, transparent 76%, rgba(3, 4, 12, 0.55));
+}
+
+.galaxy-particles {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star-particle {
+  position: absolute;
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background-color: rgba(220, 226, 255, var(--star-opacity));
+  box-shadow: 0 0 7px rgba(121, 148, 255, 0.8);
+  transform: translate3d(var(--drift-x, 0px), var(--drift-y, 0px), 0);
+  transition: transform 120ms ease-out;
+}
+
+.galaxy-instructions {
+  position: absolute;
+  z-index: 4;
+  top: 1.25rem;
+  left: 50%;
+  margin: 0;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background-color: rgba(3, 4, 12, 0.42);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.85rem;
+  transform: translateX(-50%);
+  backdrop-filter: blur(6px);
+}
+
+.planet-field {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  transform: translate3d(var(--planet-drift-x, 0px), var(--planet-drift-y, 0px), 0);
+  transition: transform 120ms ease-out;
+}
+
+.galaxy-planet {
+  position: absolute;
+  top: var(--planet-y);
+  left: var(--planet-x);
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 350ms ease, filter 350ms ease;
+}
+
+.galaxy-planet::after {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0.22;
+  filter: blur(1px);
+  transition: opacity 180ms ease;
+}
+
+.galaxy-planet:hover::after,
+.galaxy-planet:focus-visible::after {
+  opacity: 0.7;
+}
+
+.galaxy-planet:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+}
+
+.galaxy-planet span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.planet-one {
+  background: radial-gradient(circle at 35% 30%, #e2baff, #713ca9 42%, #24113d 78%);
+  box-shadow: 0 0 25px rgba(165, 101, 255, 0.75), inset -12px -10px 20px rgba(0, 0, 0, 0.45);
+}
+
+.planet-two {
+  width: 62px;
+  height: 62px;
+  background: radial-gradient(circle at 32% 28%, #bde7ff, #327cc1 48%, #112d60 80%);
+  box-shadow: 0 0 20px rgba(92, 185, 255, 0.75), inset -10px -8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.planet-two::before,
+.planet-five::before {
+  content: "";
+  position: absolute;
+  inset: 18px -20px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.planet-three {
+  width: 105px;
+  height: 105px;
+  background: radial-gradient(circle at 34% 26%, #ffe7a8, #c45e2b 47%, #562117 80%);
+  box-shadow: 0 0 30px rgba(255, 127, 56, 0.68), inset -18px -12px 22px rgba(0, 0, 0, 0.45);
+}
+
+.planet-four {
+  width: 55px;
+  height: 55px;
+  background: radial-gradient(circle at 35% 25%, #d4ffd4, #4da46b 46%, #183a2d 80%);
+  box-shadow: 0 0 18px rgba(95, 227, 142, 0.62), inset -9px -8px 14px rgba(0, 0, 0, 0.42);
+}
+
+.planet-five {
+  width: 74px;
+  height: 74px;
+  background: radial-gradient(circle at 32% 28%, #ffd6ef, #bb4f8e 46%, #4b173e 80%);
+  box-shadow: 0 0 24px rgba(245, 109, 190, 0.68), inset -12px -10px 18px rgba(0, 0, 0, 0.43);
+}
+
+.galaxy-page.is-zoomed .galaxy-planet:not(.is-selected) {
+  opacity: 0.2;
+  filter: blur(1px);
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+.galaxy-planet.is-selected {
+  z-index: 6;
+  transform: translate(calc(-50% + var(--zoom-x)), calc(-50% + var(--zoom-y))) scale(5.5);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 0 120px rgba(164, 104, 255, 0.65);
+}
+
+.planet-detail {
+  position: absolute;
+  z-index: 8;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: min(620px, calc(100% - 2.5rem));
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+  background-color: rgba(8, 9, 24, 0.82);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: opacity 350ms ease, transform 350ms ease;
+  backdrop-filter: blur(14px);
+}
+
+.planet-detail.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.planet-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.planet-detail-label {
+  margin: 0 0 0.2rem;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.planet-detail h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.planet-close {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.planet-close:hover,
+.planet-close:focus-visible {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.planet-detail-content {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.85fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.planet-photo,
+.planet-fact {
+  min-height: 150px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.planet-photo {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.85rem;
+}
+
+.planet-fact {
+  padding: 1rem;
+}
+
+.planet-fact-placeholder {
+  min-height: 4rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 800px) {
   .header-inner {
     align-items: flex-start;
@@ -503,5 +825,25 @@ h2 {
 
   .resume-preview {
     height: 600px;
+  }
+
+  .galaxy-instructions {
+    top: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .planet-detail {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  .planet-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-photo,
+  .planet-fact {
+    min-height: 105px;
   }
 }
