@@ -1,0 +1,176 @@
+/* Shared digital backdrop for the modern site style. */
+.signal-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+body[data-style="new"] .signal-field {
+  opacity: 1;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(22, 163, 74, 0.12), transparent 20%),
+    radial-gradient(circle at 18% 78%, rgba(255, 255, 255, 0.42), transparent 24%);
+}
+
+body[data-style="new"] > header,
+body[data-style="new"] > main,
+body[data-style="new"] > .theme-switch-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.pixel-grid {
+  position: absolute;
+  inset: -8%;
+  opacity: 0.52;
+  background-image:
+    radial-gradient(circle, rgba(22, 163, 74, 0.38) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(30, 41, 59, 0.24) 0 1px, transparent 1.5px);
+  background-position: 0 0, 23px 31px;
+  background-size: 46px 46px, 74px 74px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0 42%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, #000 0 42%, transparent 80%);
+  animation: digital-grid-shift 30s linear infinite;
+}
+
+.pixel-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 64% 36%, rgba(22, 163, 74, 0.32) 0 1px, transparent 2px);
+  background-size: 88px 88px;
+  opacity: 0.7;
+}
+
+.pixel-cluster {
+  --pixel-color: rgba(22, 163, 74, 0.62);
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  opacity: 0.56;
+  background:
+    linear-gradient(var(--pixel-color) 0 0) 9% 18% / 8px 8px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 32% 18% / 4px 4px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 53% 32% / 12px 12px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 75% 27% / 5px 5px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 18% 58% / 6px 6px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 42% 72% / 10px 10px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 78% 68% / 7px 7px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 65% 84% / 4px 4px no-repeat;
+  filter: drop-shadow(0 0 8px rgba(22, 163, 74, 0.2));
+  animation: digital-cluster-drift 16s ease-in-out infinite alternate;
+}
+
+.pixel-cluster::after {
+  content: "";
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: var(--pixel-color);
+  filter: blur(11px);
+  opacity: 0.32;
+}
+
+.pixel-cluster-one {
+  top: 12%;
+  right: 16%;
+  animation-duration: 17s;
+}
+
+.pixel-cluster-two {
+  top: 46%;
+  left: 5%;
+  --pixel-color: rgba(255, 255, 255, 0.62);
+  animation-delay: -5s;
+}
+
+.pixel-cluster-three {
+  top: 66%;
+  right: 10%;
+  width: 9rem;
+  height: 9rem;
+  --pixel-color: rgba(34, 197, 94, 0.48);
+  animation-duration: 22s;
+  animation-delay: -11s;
+}
+
+.pixel-cluster-four {
+  top: 27%;
+  left: 34%;
+  width: 5.5rem;
+  height: 5.5rem;
+  --pixel-color: rgba(226, 255, 235, 0.5);
+  animation-delay: -8s;
+}
+
+.pixel-cluster-five {
+  bottom: 7%;
+  left: 36%;
+  width: 4.75rem;
+  height: 4.75rem;
+  --pixel-color: rgba(20, 184, 86, 0.44);
+  animation-duration: 19s;
+  animation-delay: -14s;
+}
+
+@keyframes digital-grid-shift {
+  from {
+    background-position: 0 0, 23px 31px;
+  }
+  to {
+    background-position: 46px 46px, -51px 105px;
+  }
+}
+
+@keyframes digital-cluster-drift {
+  from {
+    transform: translate3d(-7px, -5px, 0);
+  }
+  to {
+    transform: translate3d(9px, 8px, 0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-style="new"] .signal-field {
+    background:
+      radial-gradient(circle at 75% 20%, rgba(34, 197, 94, 0.17), transparent 20%),
+      radial-gradient(circle at 18% 78%, rgba(255, 255, 255, 0.09), transparent 24%);
+  }
+
+  .pixel-grid {
+    background-image:
+      radial-gradient(circle, rgba(107, 255, 155, 0.5) 0 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 1px, transparent 1.5px);
+  }
+
+  .pixel-cluster {
+    --pixel-color: rgba(107, 255, 155, 0.64);
+    filter: drop-shadow(0 0 8px rgba(107, 255, 155, 0.28));
+  }
+
+  .pixel-cluster-two,
+  .pixel-cluster-four {
+    --pixel-color: rgba(255, 255, 255, 0.56);
+  }
+}
+
+@media (max-width: 700px) {
+  .pixel-cluster-three,
+  .pixel-cluster-four,
+  .pixel-cluster-five {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-grid,
+  .pixel-cluster {
+    animation: none;
+    transition: none;
+  }
+}

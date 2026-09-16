@@ -4,6 +4,29 @@
   font-display: swap;
 }
 
+/* A sparse camera-tracking field for the new landing style. */
+.signal-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(var(--signal-shift-x, 0), var(--signal-shift-y, 0), 0);
+  transition: opacity 300ms ease, transform 180ms ease-out;
+}
+
+.home-page[data-style="new"] .signal-field {
+  opacity: 1;
+}
+
+.home-page[data-style="new"] .site-header,
+.home-page[data-style="new"] .theme-switch-wrap,
+.home-page[data-style="new"] .page-shell {
+  position: relative;
+  z-index: 1;
+}
+
 /* These rules intentionally load after the shared stylesheet and apply only to the new landing style. */
 .home-page[data-style="new"] .hero-copy p:not(.eyebrow),
 .home-page[data-style="new"] .content-card > p {
@@ -90,5 +113,161 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* Digital reskin: a quiet pixel field replaces the earlier route-line treatment. */
+.home-page[data-style="new"] .signal-field {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(127, 29, 45, 0.09), transparent 20%),
+    radial-gradient(circle at 18% 78%, rgba(89, 86, 78, 0.08), transparent 24%);
+}
+
+.pixel-grid {
+  position: absolute;
+  inset: -8%;
+  opacity: 0.52;
+  background-image:
+    radial-gradient(circle, rgba(127, 29, 45, 0.3) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(91, 86, 76, 0.2) 0 1px, transparent 1.5px);
+  background-position: 0 0, 23px 31px;
+  background-size: 46px 46px, 74px 74px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 0 42%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, #000 0 42%, transparent 80%);
+  animation: pixel-grid-shift 30s linear infinite;
+}
+
+.pixel-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 64% 36%, rgba(127, 29, 45, 0.22) 0 1px, transparent 2px);
+  background-size: 88px 88px;
+  opacity: 0.7;
+}
+
+.pixel-cluster {
+  --pixel-color: rgba(127, 29, 45, 0.52);
+  position: absolute;
+  width: 7.5rem;
+  height: 7.5rem;
+  opacity: 0.56;
+  background:
+    linear-gradient(var(--pixel-color) 0 0) 9% 18% / 8px 8px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 32% 18% / 4px 4px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 53% 32% / 12px 12px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 75% 27% / 5px 5px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 18% 58% / 6px 6px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 42% 72% / 10px 10px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 78% 68% / 7px 7px no-repeat,
+    linear-gradient(var(--pixel-color) 0 0) 65% 84% / 4px 4px no-repeat;
+  filter: drop-shadow(0 0 7px rgba(127, 29, 45, 0.16));
+  animation: pixel-cluster-drift 16s ease-in-out infinite alternate;
+}
+
+.pixel-cluster::after {
+  content: "";
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: var(--pixel-color);
+  filter: blur(11px);
+  opacity: 0.32;
+}
+
+.pixel-cluster-one {
+  top: 12%;
+  right: 16%;
+  animation-duration: 17s;
+}
+
+.pixel-cluster-two {
+  top: 46%;
+  left: 5%;
+  --pixel-color: rgba(93, 84, 79, 0.44);
+  animation-delay: -5s;
+}
+
+.pixel-cluster-three {
+  top: 66%;
+  right: 10%;
+  width: 9rem;
+  height: 9rem;
+  --pixel-color: rgba(127, 29, 45, 0.4);
+  animation-duration: 22s;
+  animation-delay: -11s;
+}
+
+.pixel-cluster-four {
+  top: 27%;
+  left: 34%;
+  transform: scale(0.68);
+  --pixel-color: rgba(104, 79, 91, 0.4);
+  animation-delay: -8s;
+}
+
+.pixel-cluster-five {
+  bottom: 7%;
+  left: 36%;
+  transform: scale(0.58);
+  --pixel-color: rgba(115, 94, 79, 0.38);
+  animation-duration: 19s;
+  animation-delay: -14s;
+}
+
+@keyframes pixel-grid-shift {
+  from {
+    background-position: 0 0, 23px 31px;
+  }
+  to {
+    background-position: 46px 46px, -51px 105px;
+  }
+}
+
+@keyframes pixel-cluster-drift {
+  from {
+    translate: -7px -5px;
+  }
+  to {
+    translate: 9px 8px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-page[data-style="new"] .signal-field {
+    background:
+      radial-gradient(circle at 75% 20%, rgba(255, 159, 178, 0.14), transparent 20%),
+      radial-gradient(circle at 18% 78%, rgba(202, 219, 255, 0.1), transparent 24%);
+  }
+
+  .pixel-grid {
+    background-image:
+      radial-gradient(circle, rgba(255, 189, 202, 0.34) 0 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(209, 218, 255, 0.26) 0 1px, transparent 1.5px);
+  }
+
+  .pixel-cluster {
+    --pixel-color: rgba(255, 182, 198, 0.54);
+    filter: drop-shadow(0 0 7px rgba(255, 159, 178, 0.2));
+  }
+
+  .pixel-cluster-two,
+  .pixel-cluster-four {
+    --pixel-color: rgba(207, 217, 255, 0.42);
+  }
+}
+
+@media (max-width: 700px) {
+  .pixel-cluster-three,
+  .pixel-cluster-four,
+  .pixel-cluster-five {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-grid,
+  .pixel-cluster {
+    animation: none;
   }
 }
