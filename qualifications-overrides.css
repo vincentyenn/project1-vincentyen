@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "Mellos";
+  src: local("Mellos");
+  font-display: swap;
+}
+
+/* Landing-style visual system, without changing the qualifications layout. */
+.qualifications-page[data-style="new"] {
+  --design-bg: #f4f2eb;
+  --design-surface: #f4f2eb;
+  --design-ink: #171716;
+  --design-muted: #686761;
+  --design-line: #d8d5cc;
+  --design-accent: #171716;
+  background-color: var(--design-bg);
+  color: var(--design-ink);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+.qualifications-page[data-style="new"] .site-header {
+  background-color: transparent;
+  border-bottom: 0;
+  padding: 1.1rem clamp(1rem, 3vw, 2.5rem);
+}
+
+.qualifications-page[data-style="new"] .header-inner {
+  max-width: none;
+  align-items: flex-start;
+}
+
+.qualifications-page[data-style="new"] .brand {
+  max-width: 7rem;
+  color: var(--design-ink);
+  font-size: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: normal;
+}
+
+.qualifications-page[data-style="new"] nav {
+  gap: 1.05rem;
+}
+
+.qualifications-page[data-style="new"] nav a {
+  border-radius: 0;
+  color: var(--design-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0.15rem 0;
+  text-transform: none;
+}
+
+.qualifications-page[data-style="new"] nav a:hover,
+.qualifications-page[data-style="new"] nav a:focus-visible,
+.qualifications-page[data-style="new"] nav a.active {
+  background-color: transparent;
+  color: var(--design-ink);
+}
+
+.qualifications-page[data-style="new"] nav a.active {
+  border-bottom: 1px solid currentColor;
+}
+
+.qualifications-page[data-style="new"] .theme-switch-wrap {
+  max-width: none;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+.qualifications-page[data-style="new"] .theme-switch-track {
+  width: 9.5rem;
+  height: 2rem;
+  background-color: var(--design-ink);
+  box-shadow: none;
+}
+
+.qualifications-page[data-style="new"] .theme-switch-thumb {
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--design-bg);
+  box-shadow: none;
+}
+
+.qualifications-page[data-style="new"] .theme-switch.is-on .theme-switch-track {
+  background-color: var(--design-ink);
+  box-shadow: none;
+}
+
+.qualifications-page[data-style="new"] .theme-switch.is-on .theme-switch-thumb {
+  transform: translateX(7.5rem);
+}
+
+.qualifications-page[data-style="new"] .theme-switch-label {
+  color: var(--design-bg);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.qualifications-page[data-style="new"] .page-shell {
+  max-width: none;
+  padding: clamp(4rem, 9vw, 7.5rem) clamp(1rem, 3vw, 2.5rem) 5rem;
+}
+
+.qualifications-page[data-style="new"] .page-heading {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.qualifications-page[data-style="new"] .page-heading h1,
+.qualifications-page[data-style="new"] .info-panel h2 {
+  color: var(--design-ink);
+  font-family: "Helvetica Neue", "Avenir Next", Arial, sans-serif;
+}
+
+.qualifications-page[data-style="new"] .page-heading h1 {
+  max-width: none;
+  font-size: clamp(4.2rem, 8.8vw, 8.5rem);
+  font-weight: 500;
+  letter-spacing: -0.1em;
+  line-height: 0.82;
+}
+
+.qualifications-page[data-style="new"] .page-heading p,
+.qualifications-page[data-style="new"] .info-panel li {
+  font-family: "Mellos", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+.qualifications-page[data-style="new"] .page-heading p {
+  max-width: 31rem;
+  color: var(--design-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.qualifications-page[data-style="new"] .resume-preview {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.qualifications-page[data-style="new"] .info-panel {
+  border-top-color: var(--design-line);
+  padding-top: 1.5rem;
+}
+
+.qualifications-page[data-style="new"] .info-panel h2 {
+  color: var(--design-ink);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  margin-bottom: 1.25rem;
+  text-transform: none;
+}
+
+.qualifications-page[data-style="new"] .info-panel li {
+  color: var(--design-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.qualifications-page[data-style="new"] .info-panel li strong {
+  color: var(--design-ink);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .qualifications-page[data-style="new"] {
+    --design-bg: #171716;
+    --design-surface: #171716;
+    --design-ink: #f4f2eb;
+    --design-muted: #b9b6ad;
+    --design-line: #3c3a35;
+    --design-accent: #f4f2eb;
+  }
+}
+
+@media (max-width: 800px) {
+  .qualifications-page[data-style="new"] .page-shell {
+    padding-top: 4rem;
+  }
+
+  .qualifications-page[data-style="new"] .page-heading {
+    margin-bottom: 4rem;
+  }
+
+  .qualifications-page[data-style="new"] .page-heading h1 {
+    font-size: clamp(3.9rem, 16vw, 6rem);
+  }
+}
