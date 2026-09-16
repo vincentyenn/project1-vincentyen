@@ -1,0 +1,240 @@
+@font-face {
+  font-family: "Mellos";
+  src: local("Mellos");
+  font-display: swap;
+}
+
+/* Landing-style visual system, without changing the alternating activity layout. */
+.extracurricular-page[data-style="new"] {
+  --design-bg: #f4f2eb;
+  --design-surface: #f4f2eb;
+  --design-ink: #171716;
+  --design-muted: #686761;
+  --design-line: #d8d5cc;
+  --design-accent: #171716;
+  --design-accent-soft: rgba(23, 23, 22, 0.1);
+  background-color: var(--design-bg);
+  color: var(--design-ink);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+.extracurricular-page[data-style="new"] .site-header {
+  background-color: transparent;
+  border-bottom: 0;
+  padding: 1.1rem clamp(1rem, 3vw, 2.5rem);
+}
+
+.extracurricular-page[data-style="new"] .header-inner {
+  max-width: none;
+  align-items: flex-start;
+}
+
+.extracurricular-page[data-style="new"] .brand {
+  max-width: 7rem;
+  color: var(--design-ink);
+  font-size: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: normal;
+}
+
+.extracurricular-page[data-style="new"] nav {
+  gap: 1.05rem;
+}
+
+.extracurricular-page[data-style="new"] nav a {
+  border-radius: 0;
+  color: var(--design-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0.15rem 0;
+  text-transform: none;
+}
+
+.extracurricular-page[data-style="new"] nav a:hover,
+.extracurricular-page[data-style="new"] nav a:focus-visible,
+.extracurricular-page[data-style="new"] nav a.active {
+  background-color: transparent;
+  color: var(--design-ink);
+}
+
+.extracurricular-page[data-style="new"] nav a.active {
+  border-bottom: 1px solid currentColor;
+}
+
+.extracurricular-page[data-style="new"] .theme-switch-wrap {
+  max-width: none;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+.extracurricular-page[data-style="new"] .theme-switch-track {
+  width: 9.5rem;
+  height: 2rem;
+  background-color: var(--design-ink);
+  box-shadow: none;
+}
+
+.extracurricular-page[data-style="new"] .theme-switch-thumb {
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--design-bg);
+  box-shadow: none;
+}
+
+.extracurricular-page[data-style="new"] .theme-switch.is-on .theme-switch-track {
+  background-color: var(--design-ink);
+  box-shadow: none;
+}
+
+.extracurricular-page[data-style="new"] .theme-switch.is-on .theme-switch-thumb {
+  transform: translateX(7.5rem);
+}
+
+.extracurricular-page[data-style="new"] .theme-switch-label {
+  color: var(--design-bg);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.extracurricular-page[data-style="new"] .page-shell {
+  max-width: none;
+  padding: clamp(4rem, 9vw, 7.5rem) clamp(1rem, 3vw, 2.5rem) 5rem;
+}
+
+.extracurricular-page[data-style="new"] .page-heading {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.extracurricular-page[data-style="new"] .page-heading h1,
+.extracurricular-page[data-style="new"] .activity-label {
+  color: var(--design-ink);
+  font-family: "Helvetica Neue", "Avenir Next", Arial, sans-serif;
+}
+
+.extracurricular-page[data-style="new"] .page-heading h1 {
+  max-width: 13ch;
+  font-size: clamp(3.8rem, 7.8vw, 7.7rem);
+  font-weight: 500;
+  letter-spacing: -0.1em;
+  line-height: 0.82;
+}
+
+.extracurricular-page[data-style="new"] .page-heading p,
+.extracurricular-page[data-style="new"] .activity-copy > p:not(.activity-label) {
+  font-family: "Mellos", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+.extracurricular-page[data-style="new"] .page-heading p {
+  max-width: 33rem;
+  color: var(--design-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.extracurricular-page[data-style="new"] .activity-media,
+.extracurricular-page[data-style="new"] .activity-card-reverse .activity-media,
+.extracurricular-page[data-style="new"] .activity-card:nth-child(3) .activity-media {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.extracurricular-page[data-style="new"] .activity-label {
+  font-size: clamp(2.25rem, 4vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
+}
+
+.extracurricular-page[data-style="new"] .activity-copy > p:not(.activity-label) {
+  color: var(--design-muted);
+  font-size: 1.03rem;
+  line-height: 1.78;
+}
+
+.extracurricular-page[data-style="new"] .activity-card:nth-child(3) {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  max-width: none;
+}
+
+.extracurricular-page[data-style="new"] .activity-card:nth-child(3) .activity-media {
+  height: 420px;
+}
+
+.extracurricular-page[data-style="new"] .activity-card:nth-child(3) .activity-copy {
+  max-width: none;
+}
+
+.extracurricular-page[data-style="new"] .activity-links {
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.extracurricular-page[data-style="new"] .activity-link {
+  border: 0;
+  border-bottom: 1px solid var(--design-ink);
+  color: var(--design-ink);
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  padding: 0 0 0.4rem;
+}
+
+.extracurricular-page[data-style="new"] .activity-link:hover,
+.extracurricular-page[data-style="new"] .activity-link:focus-visible {
+  border-color: #7f1d2d;
+  background-color: transparent;
+  color: #7f1d2d;
+}
+
+.extracurricular-page[data-style="new"] .activity-link-title {
+  font-size: 0.84rem;
+}
+
+.extracurricular-page[data-style="new"] .activity-link-subtitle {
+  color: var(--design-muted);
+  font-family: "Mellos", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.77rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .extracurricular-page[data-style="new"] {
+    --design-bg: #171716;
+    --design-surface: #171716;
+    --design-ink: #f4f2eb;
+    --design-muted: #b9b6ad;
+    --design-line: #3c3a35;
+    --design-accent: #f4f2eb;
+  }
+}
+
+@media (max-width: 800px) {
+  .extracurricular-page[data-style="new"] .page-shell {
+    padding-top: 4rem;
+  }
+
+  .extracurricular-page[data-style="new"] .page-heading {
+    margin-bottom: 4rem;
+  }
+
+  .extracurricular-page[data-style="new"] .page-heading h1 {
+    font-size: clamp(3.8rem, 16vw, 6rem);
+  }
+
+  .extracurricular-page[data-style="new"] .activity-label {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  }
+
+  .extracurricular-page[data-style="new"] .activity-card:nth-child(3) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .extracurricular-page[data-style="new"] .activity-card:nth-child(3) .activity-media {
+    height: 280px;
+  }
+}
