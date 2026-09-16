@@ -64,9 +64,9 @@ find. I kept the navigation and page layouts simple.
 - I feel like the planets aren't visible enough, so lets make theme more visible. additionally, i want rings that connect each plannet, sort of like a galaxy orbit
 - Okay, now add a little milky way type galaxy in the center of all these planets
 - the green planet doesn't work when i click on it. also, is there any way the planets can have more distinctive features, just like how real planets are? also, for each planet, just have some randomly generated fun facts about anything and everything.
--When you cliuck on a planet, the box isnt centered. i want it to be centerted. also, remove the photo part for the fun facts, it ins't needed. can we have a bank of fun facts, so there are a lot of fun facts. For the milky way galexy thingy, when i click on it, I want it to then zoom in starwars style, and it takes us to a newly generated galexy, with new fun facts. it is essentially a reset button to get new planets and fun facts
--Ok thats good, but when i click the milky way, it shouldn't just barely change the planets. I want completely new planets, different places, orbits and everything
--Okay great. add more fun facts, some of them can be a little longer. I want to also add planet names. These names should also reset with the fun facts, so we're gonna need more planet names in a bank. Lastly, i want to go over the animation when you clikc the galaxy. I want it to be like the star wars space travel, like the image above.
+- When you cliuck on a planet, the box isnt centered. i want it to be centerted. also, remove the photo part for the fun facts, it ins't needed. can we have a bank of fun facts, so there are a lot of fun facts. For the milky way galexy thingy, when i click on it, I want it to then zoom in starwars style, and it takes us to a newly generated galexy, with new fun facts. it is essentially a reset button to get new planets and fun facts
+- Ok thats good, but when i click the milky way, it shouldn't just barely change the planets. I want completely new planets, different places, orbits and everything
+- Okay great. add more fun facts, some of them can be a little longer. I want to also add planet names. These names should also reset with the fun facts, so we're gonna need more planet names in a bank. Lastly, i want to go over the animation when you clikc the galaxy. I want it to be like the star wars space travel, like the image above.
 
 ## Technologies
 
