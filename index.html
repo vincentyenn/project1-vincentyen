@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vincent Yen | Home</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="landing-overrides.css" />
     <script src="theme-toggle.js" defer></script>
   </head>
-  <body>
+  <body class="home-page">
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html">Vincent Yen</a>
@@ -33,13 +34,14 @@
     <main class="page-shell">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Computer science student &amp; builder</p>
-          <h1>Hi, I'm Vincent.</h1>
+          <p class="eyebrow">Computer science student and creator</p>
+          <h1>I build with code and a camera.</h1>
           <p>
-            Welcome to my personal website. I am a junior at Texas A&amp;M
-            University studying computer science.
+            I am a junior at Texas A&amp;M University studying computer science.
+            I like building useful software, telling stories through video,
+            and finding the space where technology and creativity meet.
           </p>
-          <a class="button" href="portfolio.html">View my work</a>
+          <a class="button" href="portfolio.html">Explore my work</a>
         </div>
 
         <div class="image-placeholder profile-image">
@@ -75,8 +77,8 @@
         </a>
       </section>
 
-      <section class="content-card">
-        <h2>About Me</h2>
+      <section class="content-card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
         <p>
           I am a junior at Texas A&amp;M University studying computer science. I
           enjoy learning how technology can solve practical problems, but I

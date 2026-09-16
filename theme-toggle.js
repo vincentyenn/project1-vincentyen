@@ -1,20 +1,55 @@
 const toggle = document.querySelector(".theme-switch");
 
 if (toggle) {
-  const savedState = localStorage.getItem("site-toggle-state") === "on";
+  const savedOriginalStyle = localStorage.getItem("site-style-state") === "original";
 
-  function updateSwitch(isOn) {
-    toggle.classList.toggle("is-on", isOn);
-    toggle.setAttribute("aria-pressed", String(isOn));
-    toggle.setAttribute("aria-label", isOn ? "Style switch on" : "Style switch off");
+  function updateSwitch(isOriginalStyle) {
+    document.body.dataset.style = isOriginalStyle ? "original" : "new";
+    toggle.classList.toggle("is-on", isOriginalStyle);
+    toggle.setAttribute("aria-pressed", String(isOriginalStyle));
+    toggle.setAttribute(
+      "aria-label",
+      isOriginalStyle ? "Original style selected" : "New style selected"
+    );
   }
 
   toggle.addEventListener("click", () => {
-    const isOn = toggle.classList.contains("is-on");
+    const isOriginalStyle = toggle.classList.contains("is-on");
 
-    updateSwitch(!isOn);
-    localStorage.setItem("site-toggle-state", !isOn ? "on" : "off");
+    updateSwitch(!isOriginalStyle);
+    localStorage.setItem("site-style-state", !isOriginalStyle ? "original" : "new");
   });
 
-  updateSwitch(savedState);
+  updateSwitch(savedOriginalStyle);
+}
+
+const revealTarget = document.querySelector(".home-page .content-card");
+
+if (revealTarget) {
+  revealTarget.classList.add("reveal-on-scroll");
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealTarget.classList.add("is-visible");
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    revealObserver.observe(revealTarget);
+  }
 }
