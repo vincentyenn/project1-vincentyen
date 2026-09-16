@@ -49,6 +49,16 @@
   transform: translateY(0);
 }
 
+@media (min-width: 801px) {
+  .home-page[data-style="new"] .hero-copy {
+    transform: translateX(clamp(1.25rem, 3vw, 3.5rem));
+  }
+
+  .home-page[data-style="new"] .profile-image {
+    transform: translateX(clamp(-4.5rem, -4vw, -1.25rem));
+  }
+}
+
 @media (max-width: 800px) {
   .home-page[data-style="new"] .content-card {
     display: block;
