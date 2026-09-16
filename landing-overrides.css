@@ -57,6 +57,11 @@
   .home-page[data-style="new"] .profile-image {
     transform: translateX(clamp(-4.5rem, -4vw, -1.25rem));
   }
+
+  .home-page[data-style="new"] .profile-image:hover,
+  .home-page[data-style="new"] .profile-image:focus-within {
+    transform: translateX(clamp(-4.5rem, -4vw, -1.25rem));
+  }
 }
 
 @media (max-width: 800px) {
