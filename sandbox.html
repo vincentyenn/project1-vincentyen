@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vincent Yen | Sandbox</title>
     <link rel="stylesheet" href="ai-generated.css" />
+    <script src="sandbox.js" defer></script>
   </head>
   <body class="ai-body">
     <header class="ai-header">
@@ -21,6 +22,7 @@
     <main class="space-page" aria-label="Interactive galaxy">
       <div class="space-scene" aria-hidden="true">
         <div class="space-nebula"></div>
+        <div class="hyperspace-streaks" aria-hidden="true"></div>
         <div class="star-layer star-layer-one"></div>
         <div class="star-layer star-layer-two"></div>
         <div class="star-layer star-layer-three"></div>
@@ -29,7 +31,18 @@
         <div class="orbit orbit-three"></div>
       </div>
 
-      <p class="space-hint">Click a planet to zoom in</p>
+      <svg class="orbit-network" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+        <ellipse class="orbit-network-ring ring-wide" cx="500" cy="500" rx="460" ry="205" transform="rotate(-12 500 500)" />
+        <ellipse class="orbit-network-ring ring-inner" cx="510" cy="475" rx="310" ry="135" transform="rotate(24 510 475)" />
+        <path class="orbit-network-route" d="M180 320 C280 130 590 100 750 350" />
+        <path class="orbit-network-route" d="M180 320 C240 550 590 830 800 720" />
+        <path class="orbit-network-route route-soft" d="M430 230 C560 320 650 540 800 720" />
+      </svg>
+      <button class="galactic-core" type="button" aria-label="Generate a new galaxy">
+        <span>Generate a new galaxy</span>
+      </button>
+
+      <p class="space-hint">Click a planet to zoom in. Click the galaxy to reset.</p>
 
       <input class="planet-toggle" type="radio" name="planet" id="planet-none" checked />
       <input class="planet-toggle" type="radio" name="planet" id="planet-one" />
@@ -39,19 +52,19 @@
       <input class="planet-toggle" type="radio" name="planet" id="planet-five" />
 
       <div class="planet-field" aria-label="Interactive planets">
-        <label class="planet-spot planet-one" for="planet-one">
+        <label class="planet-spot planet-one" for="planet-one" role="button" tabindex="0">
           <span>Open Planet One</span>
         </label>
-        <label class="planet-spot planet-two" for="planet-two">
+        <label class="planet-spot planet-two" for="planet-two" role="button" tabindex="0">
           <span>Open Planet Two</span>
         </label>
-        <label class="planet-spot planet-three" for="planet-three">
+        <label class="planet-spot planet-three" for="planet-three" role="button" tabindex="0">
           <span>Open Planet Three</span>
         </label>
-        <label class="planet-spot planet-four" for="planet-four">
+        <label class="planet-spot planet-four" for="planet-four" role="button" tabindex="0">
           <span>Open Planet Four</span>
         </label>
-        <label class="planet-spot planet-five" for="planet-five">
+        <label class="planet-spot planet-five" for="planet-five" role="button" tabindex="0">
           <span>Open Planet Five</span>
         </label>
       </div>
@@ -61,15 +74,14 @@
           <div class="panel-header">
             <div>
               <p class="panel-kicker">Selected planet</p>
-              <h1>Planet One</h1>
+              <h1 class="planet-name" data-name-for="planet-one">Planet One</h1>
             </div>
             <label class="panel-close" for="planet-none" aria-label="Close planet details">&times;</label>
           </div>
           <div class="panel-content">
-            <div class="photo-placeholder">Add a photo here</div>
             <div class="fact-placeholder">
               <p class="panel-kicker">Fun fact</p>
-              <p>Add a fun fact here.</p>
+              <p class="fact-copy" data-fact-for="planet-one" aria-live="polite">Honey can last for years without spoiling.</p>
             </div>
           </div>
         </article>
@@ -78,15 +90,14 @@
           <div class="panel-header">
             <div>
               <p class="panel-kicker">Selected planet</p>
-              <h1>Planet Two</h1>
+              <h1 class="planet-name" data-name-for="planet-two">Planet Two</h1>
             </div>
             <label class="panel-close" for="planet-none" aria-label="Close planet details">&times;</label>
           </div>
           <div class="panel-content">
-            <div class="photo-placeholder">Add a photo here</div>
             <div class="fact-placeholder">
               <p class="panel-kicker">Fun fact</p>
-              <p>Add a fun fact here.</p>
+              <p class="fact-copy" data-fact-for="planet-two" aria-live="polite">Octopuses have three hearts.</p>
             </div>
           </div>
         </article>
@@ -95,15 +106,14 @@
           <div class="panel-header">
             <div>
               <p class="panel-kicker">Selected planet</p>
-              <h1>Planet Three</h1>
+              <h1 class="planet-name" data-name-for="planet-three">Planet Three</h1>
             </div>
             <label class="panel-close" for="planet-none" aria-label="Close planet details">&times;</label>
           </div>
           <div class="panel-content">
-            <div class="photo-placeholder">Add a photo here</div>
             <div class="fact-placeholder">
               <p class="panel-kicker">Fun fact</p>
-              <p>Add a fun fact here.</p>
+              <p class="fact-copy" data-fact-for="planet-three" aria-live="polite">A group of flamingos is called a flamboyance.</p>
             </div>
           </div>
         </article>
@@ -112,15 +122,14 @@
           <div class="panel-header">
             <div>
               <p class="panel-kicker">Selected planet</p>
-              <h1>Planet Four</h1>
+              <h1 class="planet-name" data-name-for="planet-four">Planet Four</h1>
             </div>
             <label class="panel-close" for="planet-none" aria-label="Close planet details">&times;</label>
           </div>
           <div class="panel-content">
-            <div class="photo-placeholder">Add a photo here</div>
             <div class="fact-placeholder">
               <p class="panel-kicker">Fun fact</p>
-              <p>Add a fun fact here.</p>
+              <p class="fact-copy" data-fact-for="planet-four" aria-live="polite">Bananas are berries, but strawberries are not.</p>
             </div>
           </div>
         </article>
@@ -129,15 +138,14 @@
           <div class="panel-header">
             <div>
               <p class="panel-kicker">Selected planet</p>
-              <h1>Planet Five</h1>
+              <h1 class="planet-name" data-name-for="planet-five">Planet Five</h1>
             </div>
             <label class="panel-close" for="planet-none" aria-label="Close planet details">&times;</label>
           </div>
           <div class="panel-content">
-            <div class="photo-placeholder">Add a photo here</div>
             <div class="fact-placeholder">
               <p class="panel-kicker">Fun fact</p>
-              <p>Add a fun fact here.</p>
+              <p class="fact-copy" data-fact-for="planet-five" aria-live="polite">The Eiffel Tower can grow taller in warm weather.</p>
             </div>
           </div>
         </article>
